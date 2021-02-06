@@ -2,6 +2,8 @@ const searchInput = document.getElementById('search-input');
 const searchBtn =  document.getElementById('search-btn');
 const mealsContainer =  document.getElementById('meals-container');
 
+
+
 searchBtn.addEventListener('click', function(){
   let searchInputValue = searchInput.value;
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputValue}`)
@@ -14,6 +16,9 @@ searchBtn.addEventListener('click', function(){
       singleMeal.innerHTML = domStr;
       mealsContainer.prepend(singleMeal);
       searchInput.value = '';
+      singleMeal.addEventListener('click', function(){
+        console.log(meal.strMeal)
+      })
     })
 
 
@@ -24,3 +29,7 @@ searchBtn.addEventListener('click', function(){
     // mealsContainer.appendChild(singleMeal)
   })
 })
+
+function checkDetails(){
+  console.log(this.meal.strMeal)
+}
