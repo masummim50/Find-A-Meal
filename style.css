@@ -24,3 +24,12 @@ body{
   border-radius: 20px;
   cursor: pointer;
 }
+#details{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+#details img{
+  width:200px;
+}
