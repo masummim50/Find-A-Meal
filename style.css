@@ -5,6 +5,9 @@ body{
   text-align: center;
   padding:20px;
 }
+.search-container p{
+  display: none;
+}
 #search-input, #search-btn{
   padding:10px 25px;
 }
@@ -29,6 +32,9 @@ body{
   flex-direction: column;
   text-align: center;
   align-items: center;
+}
+#details li{
+  list-style: none;
 }
 #details img{
   width:200px;
