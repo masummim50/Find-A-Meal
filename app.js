@@ -9,18 +9,19 @@ searchBtn.addEventListener('click', function(){
   if(detailsContainer.hasChildNodes()){
     detailsContainer.innerHTML = ''
   }
+  if(mealsContainer.hasChildNodes()){
+    mealsContainer.innerHTML = '';
+  }
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputValue}`)
   .then(res => res.json())
   .then(data => {
     console.log(data)
     if(data.meals == null){
+      p.style.display = 'block'
       setTimeout(() => {
-        p.style.display = 'block'
+        p.style.display = 'none'
       }, 3000);
       searchInput.value = '';
-    }
-    if(mealsContainer.hasChildNodes()){
-      mealsContainer.innerHTML = '';
     }
     data.meals.forEach(meal => {
       let domStr = `<img src="${meal.strMealThumb}"><h3>${meal.strMeal}</h3>`;
